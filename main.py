@@ -4,13 +4,13 @@ from aiogram.types import BotCommand
 
 # Вместо BOT TOKEN HERE нужно вставить токен вашего бота,
 # полученный у @BotFather
-BOT_TOKEN = 'Some token'
+BOT_TOKEN = 'BOT TOKEN HERE'
 
 # Создаем объекты бота и диспетчера
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
-# Хэндлер на команду /start
+# Хэндлер на команду /help
 @dp.message(Command("help"))
 async def cmd_start(message: types.Message):
     await message.answer("Это тестовый бот для отработки методов платежей и интерактива в телеграмме")
@@ -46,7 +46,6 @@ async def set_main_menu(bot: Bot):
     ]
 
     await bot.set_my_commands(main_menu_commands)
-
 
 # Регистрируем асинхронную функцию в диспетчере,
 # которая будет выполняться на старте бота,
